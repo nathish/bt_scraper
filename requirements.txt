@@ -1,0 +1,5 @@
+Confirmed working with Python 3.6
+
+pip install ps4
+pip install requests
+pip install re

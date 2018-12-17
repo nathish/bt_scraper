@@ -9,6 +9,7 @@ import math
 ## validating arguments ##
 if not len(sys.argv) > 2:
     print("usage: python bt_scrape.py {town or city} {surname}")
+    exit()
 
 location = sys.argv[1]
 surname = sys.argv[2]

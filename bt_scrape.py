@@ -6,8 +6,12 @@ import re
 import sys
 import math
 
-surname = sys.argv[2]
+## validating arguments ##
+if not len(sys.argv) > 2:
+    print("usage: python bt_scrape.py {town or city} {surname}")
+
 location = sys.argv[1]
+surname = sys.argv[2]
 
 ## retrieving search request ##
 dt = datetime.datetime.today()

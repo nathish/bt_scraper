@@ -81,5 +81,16 @@ if args['file']:
                     continue
             bt_scrape()
 else:
-    print(columns)
-    bt_scrape()
+    URI = base+"/Person/PersonSearch/?Surname="+surname+"&Location="+location+"&Street=&PageNumber="
+    r = requests.get(URI)
+    soupy = str(BeautifulSoup(r.content, 'html.parser'))
+    pan = re.findall(r'TypeObject.numberResults(.*)\;', soupy)
+    if not pan:
+        pan = re.findall(r'too many results', soupy)
+        if pan:
+            print('Too many results found: '+surname)
+        else:
+            print('No match found in search results: '+surname)
+    else:
+        print(columns)
+        bt_scrape()

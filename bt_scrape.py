@@ -18,7 +18,7 @@ args = vars(parser.parse_args())
 location = args['location']
 surname = args['name']
 base = "https://www.thephonebook.bt.com"
-columns = 'Name , Address , Post Code , Area , Phone Number , District , Distance from centre , Date'
+columns = 'Name , Address , Post Code , Area , Phone Number , District , Distance from centre , Data Source, Date'
 
 def bt_scrape():
     ## retrieving search request ##
@@ -49,17 +49,19 @@ def bt_scrape():
         bowl = bowl.get_text()
     
         parse_0 = bowl.replace('[','').replace(']','')
-        parse_1 = re.sub(r'(.+), (.+)', r'\1 \2', parse_0)
-        parse_2 = parse_1.split(',')
+        parse_1 = re.sub(r'(.+), ', r'\1 ', parse_0)
+        parse_2 = re.sub(r'(.+), (.+)', r'\1 \2 ', parse_1)
+        parse_3 = re.sub(r'(.+), (.+), (.+)', r'\1 \2 \3 ', parse_2)
+        parse_4 = parse_3.split(',')
     
         for i in range(hob):
-            parse_3 = (parse_2[i])
-            x = [line for line in parse_3.split('\n') if line.strip()]
-            parse_4 = x[2].split(" ")
-            y = parse_4[-2]+" "+parse_4[-1]
-            z = x[2].replace(parse_4[-2],'').replace(parse_4[-1],'')
+            parse_5 = (parse_4[i])
+            x = [line for line in parse_5.split('\n') if line.strip()]
+            parse_6 = x[2].split(" ")
+            y = parse_6[-2]+" "+parse_6[-1]
+            z = x[2].replace(parse_6[-2],'').replace(parse_6[-1],'')
         
-            print(x[0],',',x[1],',',y,',',z,',',x[4],',',parse_4[-2],',',x[7],',',date)
+            print(x[0],',',x[1],',',y,',',z,',',x[4],',',parse_6[-2],',',x[7],', BT Phone Book,',date)
 
 if args['file']:
     filepath = args['file'] 

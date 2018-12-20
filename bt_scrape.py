@@ -10,8 +10,9 @@ import argparse
 ## validating arguments ##
 parser = argparse.ArgumentParser(description='BT Phone Book to CSV web scraper')
 parser.add_argument('-l','--location', help='Specify location', required=True)
-parser.add_argument('-n','--name', help='Specify surname', required=False)
-parser.add_argument('-f','--file', help='Specify file path', required=False)
+group = parser.add_mutually_exclusive_group(required=True)
+group.add_argument('-n','--name', help='Specify surname')
+group.add_argument('-f','--file', help='Specify file path')
 args = vars(parser.parse_args())
 
 ## global variables ##

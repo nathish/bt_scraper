@@ -101,7 +101,6 @@ def bt_scrape_b():
         parse_3 = re.sub(r'(.+), (.+), (.+)', r'\1 \2 \3 ', parse_2)
         parse_3_5 = re.sub(r'(.+\S), (.+)', r'\1 \2 ', parse_3)
         parse_4 = parse_3_5.split(',')
-        print(URI+str(pnum+1))
 
         for i in range(25):
             parse_5 = (parse_4[i])

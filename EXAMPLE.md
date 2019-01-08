@@ -40,3 +40,13 @@ Name , Address , Post Code , Area , Phone Number , District , Distance from cent
  ** * ******* Reyes **  , 81 Sidney Road    , M9 8AT , Manchester   , (01619) ****** , M9 , 3.04 miles from the centre of manchester, 18/12/18 14:19:53
  *** Torres , 49 Lloyd Wright Av , M11 3NJ  , Manchester    , (0161) *** **** , M11 ,   1.62 miles from the center of manchester, 18/12/18 14:19:53
  ````
+To search for a business type, you can use the '-b' flag.
+
+Example:
+```ruby
+[root@server util]# python36 bt_scrape.py -b "Spanish Restaurants" -l Manchester
+Name , Address , Post Code , Area , Phone Number , District , Distance from centre , Data Source, Date
+Tapeo & Wine , 209 Deansgate     , M3 3NW , Manchester , (0161) 832 2770, M3 , 0.07 miles from the centre of Manchester , BT Phone Book, 08/01/19 09:57:50
+El Rincon Del Rafa , 244 Deansgate     , M3 4BQ , Manchester , (0161) 839 8819 , M3 , 0.1 miles from the centre of Manchester , BT Phone Book, 08/01/19 09:57:50
+...
+```

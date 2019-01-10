@@ -33,7 +33,7 @@ Example:
 [root@server util]# cat ./list.txt
 Reyes
 Torres
-[root@server util]# python bt_scrape.py -l manchester -f list.txt
+[root@server util]# python36 bt_scrape.py -l manchester -f list.txt
 Name , Address , Post Code , Area , Phone Number , District , Distance from centre , Date
  ********* Reyes , 29 Kensington Road   , M21 9GH , Manchester  , (0161) *** **** , M21 , 2.47 miles from the centre of manchester , 18/12/18 14:19:53
  ******* Reyes *******  ,  75 Brandwood Av  , M21 7PL , Manchester  , (01616) ****** , M21 , 3.96 miles from the centre of manchester, 18/12/18 14:19:53

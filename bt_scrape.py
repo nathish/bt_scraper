@@ -1,5 +1,4 @@
 ## python 3.6 > ##
-## python 3.6 > ##
 from bs4 import BeautifulSoup
 import requests
 import datetime
